@@ -8,14 +8,15 @@
 #include "M5StickC.h"
 #include <OneWire.h>
 #include <DallasTemperature.h>
+#include "password.h"
 
 WiFiClient espClient;
 PubSubClient client(espClient);
-const char* ssid           = "x";
-const char* password       = "x";
-const char* mqtt_server    = "192.168.2.137";
-const char* mqtt_user      = "x";
-const char* mqtt_password  = "x";
+const char* ssid           = MYSSID;
+const char* password       = WIFI_PWD;
+const char* mqtt_server    = MQTT_SERVER;
+const char* mqtt_user      = MQTT_USER;
+const char* mqtt_password  = MQTT_PWD;
 void setupWifi();
 void callback(char* topic, byte* payload, unsigned int length);
 void reConnect();
